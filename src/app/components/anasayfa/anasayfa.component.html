@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anasayfa</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+  <form>
+    <div class="search row">
+      <div  class="col input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Film Adı</span>
+        </div>
+          <input type="text" class="form-control" [(ngModel)]="filmAdi" name="flimAdi">
+      </div>
+      <div  class="col input-group mb-3">
+        <div  class="input-group-prepend">
+          <span  class="input-group-text" >Vizyon Yılı</span>
+        </div>
+          <input size="4"  type="text" class="form-control" maxlength="4" [(ngModel)]="viyonTarihi" name="vizyonYili" >
+      </div>
+      <div class=" col form-group">
+        <select class="form-control" id="sel1" name="sellist1">
+          <option>Aksiyon</option>
+          <option>Macera</option>
+          <option>Animasyon</option>
+          <option>Komedi</option>
+          <option>Suc</option>
+          <option>Aile</option>
+          <option>Korku</option>
+          <option>Gerilim</option>
+          <option>Romantik</option>
+        </select>
+      </div>
+      <div  class="col">
+        <button (click) = "filmAra()" type="button" class="btn btn-success">Flim Ara</button>
+      </div>
+  </div>
+  </form>
+  <p id="ikaz" style="color: red; text-align: center; visibility: hidden;">VERDIGINIZ BILGILERE GORE FILM BULUNAMADI, LUTFEN BILGILERI KONTOROL EDINIZ</p>
+  <div class="container">
+    <!--ARANAN SONUC BULUNURSA SET EDILECEK DIV -->
+    <div id="card" class="card" style="width:400px;margin-left: 30%; visibility: hidden;">
+      <img class="card-img-top" src = " "   alt="Card image" style="width:100%" id="poster">
+      <div class="card-body">
+        <h4 class="card-title" id="filmAdi"></h4>
+        <span class="cardTitle">Yayın Tarihi</span> <p id="yayinTarihi" class="card-text"></p>
+        <span class="cardTitle">Film Türü</span> <p id="filmTuru" class="card-text"></p>
+        <span class="cardTitle">Sure</span> <p id="filmSuresi" class="card-text"></p>
+        <span class="cardTitle">Yönetmen</span> <p id="yonetmen" class="card-text"></p>
+        <span class="cardTitle">Yazar</span>  <p id="yazar" class="card-text"></p>
+        <span class="cardTitle">Oyuncular</span> <p id="oyuncular" class="card-text"></p>
+        <span class="cardTitle">Filmin orjinal dili</span>  <p id="filminOrjinalDili" class="card-text"></p>
+        <span class="cardTitle">imdb Rating</span> <p id="imdbRating" class="card-text"></p>
+        <span class="cardTitle">Ozeti</span>  <p id="ozeti" class="card-text"></p>
+        <button (click) = "favorilerimeKayitEt()" type="button" class="btn btn btn-warning" style="margin-left: 25%;">Favorilerime Kayıt Et</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

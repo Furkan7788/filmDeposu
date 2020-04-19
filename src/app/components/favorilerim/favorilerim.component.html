@@ -1,0 +1,35 @@
+<div class="liste"> <!--Bu Bolumde Angular component bilesenlerinden yararlanildi -->
+<mat-accordion *ngFor = 'let film of this.dataProvider.favoriFilmlerim '>
+  <mat-expansion-panel  >
+
+    <mat-expansion-panel-header >
+      <mat-panel-title>
+      <span style="font-weight: bolder;">Film Adı :</span>{{film.Title}}
+
+      </mat-panel-title>
+      <mat-panel-description style="position: absolute;  margin-left: 40%;">
+        <span style="font-weight: bolder;">Vizyon Yılı :</span>{{film.Released}}
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+      <div>
+        <img class="card-img-top" [src]="transform(film.Poster)"   alt="Card image" style="width:15%; margin-left: 45%;" id="poster">
+      </div>
+      <span class="cardTitle">Film Türü</span> {{film.Genre}} <br>
+      <span class="cardTitle">Sure</span> {{film.Runtime}} <br>
+      <span class="cardTitle">Yönetmen</span> {{film.Director}} <br>
+      <span class="cardTitle">Yazar</span> {{film.Writer}} <br>
+      <span class="cardTitle">Oyuncular</span> {{film.Actors}} <br>
+      <span class="cardTitle">Filmin orjinal dili</span>  {{film.Language}} <br>
+      <span class="cardTitle">imdb Rating</span> {{film.imdbRating}} <br>
+      <span class="cardTitle">Ozeti</span>  {{film.Plot}} <br>
+
+  <mat-action-row>
+    <button style="background-color: red;" (click)="favorilerimdenCikar(film.Title)"  mat-button>Favorilerimden Cikar</button>
+  </mat-action-row>
+
+  </mat-expansion-panel>
+
+  <p></p>
+
+</mat-accordion>
+</div>
